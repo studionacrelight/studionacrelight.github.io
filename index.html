@@ -11,7 +11,6 @@
             --bg-color: #f3f0ea; /* Warm neutral off-white/beige tone from screenshot */
             --text-color: #2b2b2b;
             --muted-text: #606060;
-            --card-bg: #e9e5dc;
         }
 
         body {
@@ -31,15 +30,16 @@
             background-color: var(--bg-color);
         }
 
-        .logo-placeholder {
-            /* Placeholder box for Logo */
-            border: 1px dashed #999;
-            padding: 0.5rem 1rem;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            color: var(--text-color);
-            background: rgba(255, 255, 255, 0.4);
+        .logo-container {
+            max-height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 36px;
+            width: auto;
+            object-fit: contain;
         }
 
         /* Hero / Background Banner Section */
@@ -47,8 +47,7 @@
             position: relative;
             width: 100%;
             height: 320px;
-            /* BACKGROUND IMAGE PLACEHOLDER: Replace URL or background property with your image */
-            background: #d8d4cd url('5838a8c2ebb726827f1384f7042d7553.jpg') center/cover no-repeat;
+            background: #d8d4cd center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -59,7 +58,6 @@
         }
 
         .hero-banner::after {
-            /* Optional overlay to ensure text contrast if background is bright */
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -114,47 +112,45 @@
             line-height: 1.5;
         }
 
-        /* Photo Grid Gallery Section */
+        /* Uniform Multi-Item Photo Grid Section */
         .photo-grid-section {
             max-width: 1100px;
             margin: 3rem auto 5rem auto;
             padding: 0 2rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
         }
 
         .photo-card {
             display: flex;
             flex-direction: column;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid #e2ded5;
+            padding: 1rem;
         }
 
-        .image-placeholder {
+        .image-wrapper {
             width: 100%;
-            height: 280px;
+            /* Forces a strict uniform 16:10 widescreen ratio across all image cards */
+            aspect-ratio: 16 / 10;
             background-color: #dcd7ce;
-            border: 2px dashed #b5ada3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #7a7267;
-            font-size: 0.9rem;
-            font-weight: 500;
             position: relative;
             overflow: hidden;
         }
 
-        /* Use this tag style when you replace placeholders with real images */
-        .image-placeholder img {
+        .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         .photo-caption {
-            font-size: 0.85rem;
-            color: var(--muted-text);
-            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-color);
+            margin-top: 0.8rem;
         }
 
         /* Responsive adjustments */
@@ -169,24 +165,23 @@
                 padding: 1rem 1.5rem;
                 margin: 0 1rem;
             }
+            header {
+                padding: 1rem 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header with Logo Placeholder -->
+    <!-- Header with Actual Logo File -->
     <header>
-        <div class="logo-placeholder">
-            [ LOGO PLACEHOLDER ]
+        <div class="logo-container">
+            <img src="95a409617f24eb76e24cf85c0c6823d3.jpg" alt="Core Concepts AB Logo">
         </div>
     </header>
 
-    <!-- Hero Banner with Background Image Placeholder -->
+    <!-- Hero Banner -->
     <section class="hero-banner">
-        <!-- 
-          NOTE: To use a background image, replace the inline background style or upload 
-          your image file to the repo and reference it like: background-image: url('your-bg.jpg'); 
-        -->
         <div class="hero-content">
             <h1>Core Concepts AB</h1>
             <p>Material-First Infrastructure for Modern Brands</p>
@@ -209,18 +204,33 @@
         </div>
     </section>
 
-    <!-- Photo Grid Gallery Section (Placeholders for your photos) -->
+    <!-- Uniform Photo Grid Gallery Section -->
     <section class="photo-grid-section">
+        
+        <!-- Brand Item 1: Nacrelight -->
         <div class="photo-card">
-            <!-- Replace inner content with <img src="your-image-1.jpg" alt="..."> when ready -->
-            <img src="ed30ffe7dd6616e0a7b5ec9b127e5ca9.jpg" alt="...">
-            <div class="photo-caption">Nacrelight. Premium Supima Essentials.</div>
+            <div class="image-wrapper">
+                <img src="ed30ffe7dd6616e0a7b5ec9b127e5ca9.jpg" alt="Nacrelight">
+            </div>
+            <div class="photo-caption">Nacrelight</div>
         </div>
+
+        <!-- Brand Item 2: Irida -->
         <div class="photo-card">
-            <!-- Replace inner content with <img src="your-image-2.jpg" alt="..."> when ready -->
-            <img src="972198a2936dd19edd649add05c63ee4.jpg" alt="...">
-            <div class="photo-caption">Irida. Precision Accessories</div>
+            <div class="image-wrapper">
+                <img src="972198a2936dd19edd649add05c63ee4.jpg" alt="Irida Precision Accessories">
+            </div>
+            <div class="photo-caption">Irida, Precision Accessories</div>
         </div>
+
+        <!-- Brand Item 3: Nacrelight Jr. -->
+        <div class="photo-card">
+            <div class="image-wrapper">
+                <img src="d32164cca8097d737c4e4ac49e635c5b.jpg" alt="Nacrelight Jr.">
+            </div>
+            <div class="photo-caption">Nacrelight Jr.</div>
+        </div>
+
     </section>
 
 </body>
