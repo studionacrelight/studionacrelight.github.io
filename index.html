@@ -11,7 +11,7 @@
             --bg-color: #f3f0ea; /* Warm neutral off-white/beige tone */
             --text-color: #2b2b2b;
             --muted-text: #606060;
-            --border-color: #e2ded5;
+            --border-color: #d8d4cd;
         }
 
         body {
@@ -37,7 +37,6 @@
             align-items: center;
         }
 
-        /* Scaled down for crisp, high-definition display */
         .logo-container img {
             height: 22px; 
             width: auto;
@@ -56,7 +55,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            border-bottom: 1px solid #d5d1c8;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero-banner::after {
@@ -90,7 +89,7 @@
             font-weight: 400;
         }
 
-        /* Three-Column Feature Highlighters */
+        /* Three-Column Feature Highlighters (Top) */
         .features-grid {
             max-width: 1100px;
             margin: 3rem auto;
@@ -114,10 +113,10 @@
             line-height: 1.5;
         }
 
-        /* Uniform Multi-Item Photo Grid Section */
+        /* Uniform Photo Grid Section */
         .photo-grid-section {
             max-width: 1100px;
-            margin: 3rem auto;
+            margin: 3rem auto 2rem auto;
             padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -127,9 +126,6 @@
         .photo-card {
             display: flex;
             flex-direction: column;
-            background: rgba(255, 255, 255, 0.3);
-            border: 1px solid var(--border-color);
-            padding: 1rem;
         }
 
         .image-wrapper {
@@ -138,6 +134,7 @@
             background-color: #dcd7ce;
             position: relative;
             overflow: hidden;
+            border: 1px solid var(--border-color);
         }
 
         .image-wrapper img {
@@ -148,52 +145,85 @@
         }
 
         .photo-caption {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-color);
-            margin-top: 0.8rem;
-        }
-
-        /* Additional Content / Lower Section */
-        .lower-content-section {
-            max-width: 1100px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-            border-top: 1px solid var(--border-color);
-            padding-top: 3rem;
-        }
-
-        .lower-content-section h3 {
-            font-size: 1.4rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .lower-content-section p {
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             color: var(--muted-text);
-            max-width: 800px;
+            margin-top: 0.6rem;
+            line-height: 1.4;
+        }
+
+        .photo-caption strong {
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        /* Three-Column Info Section (Infrastructure, Governance, Location) */
+        .info-columns-section {
+            max-width: 1100px;
+            margin: 3rem auto 4rem auto;
+            padding: 3rem 2rem;
+            border-top: 1px dashed var(--border-color);
+            border-bottom: 1px dashed var(--border-color);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+        }
+
+        .info-col h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0 0 0.6rem 0;
+            color: var(--text-color);
+        }
+
+        .info-col p {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Dark Footer */
+        footer {
+            background-color: #000000;
+            color: #b0b0b0;
+            padding: 4rem 2rem 3rem 2rem;
+            font-size: 0.8rem;
             line-height: 1.6;
         }
 
-        /* Footer */
-        footer {
-            background-color: #e9e5dc;
-            border-top: 1px solid var(--border-color);
-            padding: 3rem 2rem;
-            text-align: center;
-            color: var(--muted-text);
-            font-size: 0.85rem;
-            margin-top: 5rem;
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 2rem;
         }
 
-        footer p {
-            margin: 0.4rem 0;
+        .footer-col p {
+            margin: 0.25rem 0;
+        }
+
+        .footer-col a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-col a:hover {
+            color: #d0d0d0;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2.5rem auto 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333333;
+            color: #888888;
+            font-size: 0.75rem;
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
-            .features-grid, .photo-grid-section {
+            .features-grid, .photo-grid-section, .info-columns-section, .footer-content {
                 grid-template-columns: 1fr;
             }
             .hero-banner {
@@ -211,14 +241,14 @@
 </head>
 <body>
 
-    <!-- Header with Scaled-Down, Crisp Logo -->
+    <!-- Header with Crisp Logo -->
     <header>
         <div class="logo-container">
             <img src="95a409617f24eb76e24cf85c0c6823d3.jpg" alt="Core Concepts AB Logo">
         </div>
     </header>
 
-    <!-- Hero Banner with Background Image -->
+    <!-- Hero Banner -->
     <section class="hero-banner">
         <div class="hero-content">
             <h1>Core Concepts AB</h1>
@@ -226,7 +256,7 @@
         </div>
     </section>
 
-    <!-- 3-Column Feature Text -->
+    <!-- 3-Column Feature Text (Top) -->
     <section class="features-grid">
         <div class="feature-item">
             <h4>Material Integrity.</h4>
@@ -242,7 +272,7 @@
         </div>
     </section>
 
-    <!-- Uniform Photo Grid Gallery Section -->
+    <!-- Uniform Photo Grid Section -->
     <section class="photo-grid-section">
         
         <!-- Brand Item 1: Nacrelight -->
@@ -250,37 +280,64 @@
             <div class="image-wrapper">
                 <img src="ed30ffe7dd6616e0a7b5ec9b127e5ca9.jpg" alt="Nacrelight">
             </div>
-            <div class="photo-caption">Nacrelight</div>
+            <div class="photo-caption"><strong>Nacrelight.</strong> Premium Supima essentials.</div>
         </div>
 
         <!-- Brand Item 2: Irida -->
         <div class="photo-card">
             <div class="image-wrapper">
-                <img src="972198a2936dd19edd649add05c63ee4.jpg" alt="Irida Precision Accessories">
+                <img src="972198a2936dd19edd649add05c63ee4.jpg" alt="Irida">
             </div>
-            <div class="photo-caption">Irida, Precision Accessories</div>
+            <div class="photo-caption"><strong>Irida.</strong> Precision Accessories.</div>
         </div>
 
         <!-- Brand Item 3: Nacrelight Jr. -->
-        <div class="photo-card">
+        <div class="photo-card" style="margin-top: 2rem;">
             <div class="image-wrapper">
                 <img src="d32164cca8097d737c4e4ac49e635c5b.jpg" alt="Nacrelight Jr.">
             </div>
-            <div class="photo-caption">Nacrelight Jr.</div>
+            <div class="photo-caption"><strong>Nacrelight Jr..</strong> Premium kids essentials. [Q3 2027]</div>
         </div>
 
     </section>
 
-    <!-- Lower Content Section -->
-    <section class="lower-content-section">
-        <h3>Building Sustainable Foundations</h3>
-        <p>Core Concepts AB operates as a multi-brand corporate umbrella organization, focusing on long-term scalability, material transparency, and structural integrity across all ventures. By integrating modern supply chain practices with timeless design principles, we build brands positioned for sustainable growth.</p>
+    <!-- 3-Column Info Section (Infrastructure, Governance, Location) -->
+    <section class="info-columns-section">
+        <div class="info-col">
+            <h4>Infrastructure</h4>
+            <p>Operating a lean, agile supply chain with strategic manufacturing partners in India and logistics hubs in Northern Europe. Optimized for precision and material integrity.</p>
+        </div>
+        <div class="info-col">
+            <h4>Governance</h4>
+            <p>Core Concepts AB serves as the parent entity for a portfolio of material-first brands. We manage the structural, financial, and legal framework for our brand portfolio.</p>
+        </div>
+        <div class="info-col">
+            <h4>Location</h4>
+            <p>Headquartered in Anderslöv, Sweden. Registered for international trade and EU intra-community operations.</p>
+        </div>
     </section>
 
-    <!-- Site Footer -->
+    <!-- Black Footer -->
     <footer>
-        <p>&copy; 2026 Core Concepts AB. All rights reserved.</p>
-        <p>Anderslöv, Sweden</p>
+        <div class="footer-content">
+            <div class="footer-col">
+                <p><strong>Core Concepts AB</strong></p>
+                <p>Org. nr: 559572-2736</p>
+                <p>VAT nr: SE55957273601</p>
+            </div>
+            <div class="footer-col">
+                <p><a href="#">Privacy Policy & Cookies</a></p>
+                <p>All brands under Core Concepts AB.</p>
+            </div>
+            <div class="footer-col">
+                <p><strong>Registered office</strong></p>
+                <p>Anderslöv, Sweden</p>
+                <p><a href="mailto:corporate@coreconcepts.se">corporate@coreconcepts.se</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 Core Concepts AB. All rights reserved. Irida and Nacrelight are registered trademarks or trademarks of Core Concepts AB.</p>
+        </div>
     </footer>
 
 </body>
