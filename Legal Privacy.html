@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Privacy | Core Concepts AB</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f3f0ea; /* Warm neutral off-white/beige tone */
+            --text-color: #2b2b2b;
+            --muted-text: #606060;
+            --border-color: #d8d4cd;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Header Section */
+        header {
+            padding: 1.2rem 3rem;
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            height: 22px; 
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo-container a {
+            text-decoration: none;
+        }
+
+        /* Hero / Background Banner Section */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            background: #d8d4cd url('5838a8c2ebb726827f1384f7042d7553.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-banner::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.2);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(243, 240, 234, 0.88);
+            padding: 1.5rem 3rem;
+            max-width: 700px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        /* Legal Content Section */
+        .legal-container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .legal-block {
+            margin-bottom: 4rem;
+        }
+
+        .legal-block h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 0.4rem;
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            margin-bottom: 2rem;
+        }
+
+        .lang-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .lang-col {
+            background: rgba(255, 255, 255, 0.25);
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .lang-col h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .policy-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0 0 0.4rem 0;
+            color: var(--text-color);
+        }
+
+        .policy-section p {
+            font-size: 0.88rem;
+            color: var(--muted-text);
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .policy-section a {
+            color: var(--text-color);
+            text-decoration: underline;
+        }
+
+        /* Black Footer */
+        footer {
+            background-color: #000000;
+            color: #b0b0b0;
+            padding: 4rem 2rem 3rem 2rem;
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 2rem;
+        }
+
+        .footer-col p {
+            margin: 0.25rem 0;
+        }
+
+        .footer-col a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .footer-col a:hover {
+            color: #d0d0d0;
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 2.5rem auto 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid #333333;
+            color: #888888;
+            font-size: 0.75rem;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .lang-grid, .footer-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-banner {
+                height: 200px;
+            }
+            .hero-content {
+                padding: 1rem 1.5rem;
+                margin: 0 1rem;
+            }
+            header {
+                padding: 1rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="95a409617f24eb76e24cf85c0c6823d3.jpg" alt="Core Concepts AB Logo">
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner with Updated Title -->
+    <section class="hero-banner">
+        <div class="hero-content">
+            <h1>Legal & Privacy</h1>
+        </div>
+    </section>
+
+    <!-- Main Legal & Privacy Content Area -->
+    <main class="legal-container">
+        
+        <!-- SECTION 1: PRIVACY POLICY -->
+        <section class="legal-block">
+            <h2>Privacy Policy / Integritetspolicy</h2>
+            <div class="meta-info">
+                <strong>Effective Date / Ikraftträdandedatum:</strong> April 14, 2026 / 14 april 2026<br>
+                <strong>Data Controller / Personuppgiftsansvarig:</strong> Core Concepts AB (Org. nr: 559572-2736), Anderslöv, Sweden.
+            </div>
+
+            <div class="lang-grid">
+                <!-- English Version -->
+                <div class="lang-col">
+                    <h3>English</h3>
+                    
+                    <div class="policy-section">
+                        <h4>1. Scope</h4>
+                        <p>Core Concepts AB ("we," "us," or "our") operates as a corporate entity and holding company. This website is informational and does not offer user accounts, newsletters, or direct e-commerce transactions.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>2. Data Collection</h4>
+                        <p>We do not collect personal data (such as names, addresses, or emails) through this website unless you voluntarily contact us via the provided corporate email address.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>3. Automated Data Collection</h4>
+                        <p>When you visit our site, standard server logs are collected by our hosting provider (Google). This may include your IP address, browser type, and the time of your visit. This data is used exclusively for security purposes and to ensure the technical stability of the site.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>4. Third-Party Links</h4>
+                        <p>This site contains links to our subsidiary brands (e.g., Nacrelight). These external sites operate under their own privacy policies.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>5. Your Rights</h4>
+                        <p>Under the GDPR, you have the right to access, correct, or request the deletion of any personal data we may hold. For inquiries, please contact <a href="mailto:corporate@coreconcepts.se">corporate@coreconcepts.se</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Swedish Version -->
+                <div class="lang-col">
+                    <h3>Svenska</h3>
+                    
+                    <div class="policy-section">
+                        <h4>1. Omfattning</h4>
+                        <p>Core Concepts AB ("vi", "oss" eller "vår") fungerar som en juridisk enhet och moderbolag. Denna webbplats är informativ och erbjuder inte användarkonton, nyhetsbrev eller direkta e-handelstransaktioner.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>2. Insamling av data</h4>
+                        <p>Vi samlar inte in personuppgifter (såsom namn, adresser eller e-postadresser) via denna webbplats om du inte frivilligt kontaktar oss via den angivna företagsadressen.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>3. Automatiserad datainsamling</h4>
+                        <p>När du besöker vår webbplats samlas standardiserade serverloggar in av vår värdleverantör (Google). Detta kan inkludera din IP-adress, webbläsartyp och tidpunkten för ditt besök. Dessa data används uteslutande för säkerhetsändamål och för att säkerställa webbplatsens tekniska stabilitet.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>4. Tredjepartslänkar</h4>
+                        <p>Denna webbplats innehåller länkar till våra dotterbolag (t.ex. Nacrelight). Dessa externa webbplatser lyder under sina egna integritetspolicyer.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>5. Dina rättigheter</h4>
+                        <p>Enligt GDPR har du rätt att få tillgång till, korrigera eller begära radering av de personuppgifter vi eventuellt innehar. För förfrågningar, vänligen kontakta <a href="mailto:corporate@coreconcepts.se">corporate@coreconcepts.se</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: COOKIE INFORMATION -->
+        <section class="legal-block">
+            <h2>Cookie Information / Information om cookies</h2>
+            
+            <div class="lang-grid">
+                <!-- English Version -->
+                <div class="lang-col">
+                    <h3>English</h3>
+                    
+                    <div class="policy-section">
+                        <h4>1. Use of Cookies</h4>
+                        <p>This website uses only strictly necessary cookies. These are essential for the technical operation of the site, such as security and load balancing.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>2. No Tracking</h4>
+                        <p>We do not use marketing, advertising, or third-party tracking cookies (such as Google Analytics or Meta Pixels) on coreconcepts.se. Your browsing behavior is not profiled or shared with third parties for commercial purposes.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>3. Managing Cookies</h4>
+                        <p>You can choose to disable cookies through your browser settings; however, certain parts of the site may not function correctly without them.</p>
+                    </div>
+                </div>
+
+                <!-- Swedish Version -->
+                <div class="lang-col">
+                    <h3>Svenska</h3>
+                    
+                    <div class="policy-section">
+                        <h4>1. Användning av cookies</h4>
+                        <p>Denna webbplats använder endast strikt nödvändiga cookies. Dessa är nödvändiga för webbplatsens tekniska funktion, såsom säkerhet och lastbalansering.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>2. Ingen spårning</h4>
+                        <p>Vi använder inte marknadsförings-, annonserings- eller spårningscookies från tredje part (såsom Google Analytics eller Meta Pixels) på coreconcepts.se. Ditt surfbeteende profileras inte och delas inte med tredje part för kommersiella ändamål.</p>
+                    </div>
+
+                    <div class="policy-section">
+                        <h4>3. Hantera cookies</h4>
+                        <p>Du kan välja att inaktivera cookies via dina webbläsarinställningar; vissa delar av webbplatsen kan dock sluta fungera korrekt utan dem.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Black Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <p><strong>Core Concepts AB</strong></p>
+                <p>Org. nr: 559572-2736</p>
+                <p>VAT nr: SE55957273601</p>
+            </div>
+            <div class="footer-col">
+                <p><a href="legal-privacy.html">Privacy Policy & Cookies</a></p>
+                <p>All brands under Core Concepts AB.</p>
+            </div>
+            <div class="footer-col">
+                <p><strong>Registered office</strong></p>
+                <p>Anderslöv, Sweden</p>
+                <p><a href="mailto:corporate@coreconcepts.se">corporate@coreconcepts.se</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2026 Core Concepts AB. All rights reserved. Irida and Nacrelight are registered trademarks or trademarks of Core Concepts AB.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
