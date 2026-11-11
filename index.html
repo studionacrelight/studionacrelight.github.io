@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Website</title>
-    <!-- Google Fonts for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Core Concepts AB</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #1a73e8;
-            --text-color: #202124;
-            --bg-color: #ffffff;
-            --light-bg: #f8f9fa;
+            --bg-color: #f3f0ea; /* Warm neutral off-white/beige tone from screenshot */
+            --text-color: #2b2b2b;
+            --muted-text: #606060;
+            --card-bg: #e9e5dc;
         }
 
         body {
@@ -20,135 +20,212 @@
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
+        /* Header Section */
         header {
-            background-color: var(--bg-color);
-            border-bottom: 1px solid #dadce0;
-            padding: 1rem 2rem;
+            padding: 1.5rem 3rem;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            background-color: var(--bg-color);
         }
 
-        .logo {
-            font-family: 'Google Sans', sans-serif;
-            font-size: 1.25rem;
-            font-weight: 500;
+        .logo-placeholder {
+            /* Placeholder box for Logo */
+            border: 1px dashed #999;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
             color: var(--text-color);
-            text-decoration: none;
+            background: rgba(255, 255, 255, 0.4);
         }
 
-        nav a {
-            color: #5f6368;
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        nav a:hover {
-            color: var(--primary-color);
-        }
-
-        .hero {
-            background-color: var(--light-bg);
+        /* Hero / Background Banner Section */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            /* BACKGROUND IMAGE PLACEHOLDER: Replace URL or background property with your image */
+            background: #d8d4cd url('5838a8c2ebb726827f1384f7042d7553.jpg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 5rem 1rem;
-            border-bottom: 1px solid #dadce0;
+            border-top: 1px solid #d5d1c8;
+            border-bottom: 1px solid #d5d1c8;
         }
 
-        .hero h1 {
-            font-family: 'Google Sans', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
+        .hero-banner::after {
+            /* Optional overlay to ensure text contrast if background is bright */
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.15);
+            pointer-events: none;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: #5f6368;
-            max-width: 600px;
-            margin: 0 auto 2rem auto;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(243, 240, 234, 0.85);
+            padding: 1.5rem 3rem;
+            max-width: 700px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
         }
 
-        .btn {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-block;
-            transition: background 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #1557b0;
-        }
-
-        .content-section {
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .content-section h2 {
-            font-family: 'Google Sans', sans-serif;
+        .hero-content h1 {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            font-weight: 500;
+            margin: 0 0 0.5rem 0;
+            letter-spacing: 0.5px;
         }
 
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid #dadce0;
-            color: #5f6368;
+        .hero-content p {
+            font-size: 0.95rem;
+            color: var(--muted-text);
+            margin: 0;
+            font-weight: 400;
+        }
+
+        /* Three-Column Feature Highlighters */
+        .features-grid {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 0 0 0.4rem 0;
+            color: var(--text-color);
+        }
+
+        .feature-item p {
             font-size: 0.85rem;
-            background-color: var(--light-bg);
+            color: var(--muted-text);
+            margin: 0;
+            line-height: 1.5;
         }
 
+        /* Photo Grid Gallery Section */
+        .photo-grid-section {
+            max-width: 1100px;
+            margin: 3rem auto 5rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .photo-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 280px;
+            background-color: #dcd7ce;
+            border: 2px dashed #b5ada3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7a7267;
+            font-size: 0.9rem;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Use this tag style when you replace placeholders with real images */
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-caption {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+            margin-top: 0.6rem;
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
+            .features-grid, .photo-grid-section {
+                grid-template-columns: 1fr;
+            }
+            .hero-banner {
+                height: 260px;
+            }
+            .hero-content {
+                padding: 1rem 1.5rem;
+                margin: 0 1rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
+    <!-- Header with Logo Placeholder -->
     <header>
-        <a href="#" class="logo">My Brand</a>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
+        <div class="logo-placeholder">
+            [ LOGO PLACEHOLDER ]
+        </div>
     </header>
 
-    <!-- Hero Section (Main Banner) -->
-    <section class="hero">
-        <h1>Welcome to My Website</h1>
-        <p>This is a clean, modern, and lightweight landing page template built to run seamlessly on GitHub Pages.</p>
-        <a href="#" class="btn">Get Started</a>
+    <!-- Hero Banner with Background Image Placeholder -->
+    <section class="hero-banner">
+        <!-- 
+          NOTE: To use a background image, replace the inline background style or upload 
+          your image file to the repo and reference it like: background-image: url('your-bg.jpg'); 
+        -->
+        <div class="hero-content">
+            <h1>Core Concepts AB</h1>
+            <p>Material-First Infrastructure for Modern Brands</p>
+        </div>
     </section>
 
-    <!-- Main Content Area -->
-    <main class="content-section">
-        <h2>About This Page</h2>
-        <p>Google Sites exports files packed with internal scripts and proprietary configurations that cannot execute outside of Google's hosting infrastructure. By replacing it with standard HTML and CSS, your site will load instantly and display reliably on GitHub Pages.</p>
-        <p>Feel free to edit the text, add sections, or expand this structure to match your vision!</p>
-    </main>
+    <!-- 3-Column Feature Text -->
+    <section class="features-grid">
+        <div class="feature-item">
+            <h4>Material Integrity.</h4>
+            <p>Sourcing world-class Supima cotton and raw textiles.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Lead Architecture.</h4>
+            <p>Applying Agile methodologies to manufacturing and supply chain lead times.</p>
+        </div>
+        <div class="feature-item">
+            <h4>Structural Basics.</h4>
+            <p>Focus on clothing and accessories that serve as the foundation of a wardrobe.</p>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 My Brand. All rights reserved.</p>
-    </footer>
+    <!-- Photo Grid Gallery Section (Placeholders for your photos) -->
+    <section class="photo-grid-section">
+        <div class="photo-card">
+            <!-- Replace inner content with <img src="your-image-1.jpg" alt="..."> when ready -->
+            <div class="image-placeholder">
+                [ PHOTO PLACEHOLDER 1 ]
+            </div>
+            <div class="photo-caption"></div>
+        </div>
+        <div class="photo-card">
+            <!-- Replace inner content with <img src="your-image-2.jpg" alt="..."> when ready -->
+            <div class="image-placeholder">
+                [ PHOTO PLACEHOLDER 2 ]
+            </div>
+            <div class="photo-caption">Irida, Precision Accessories</div>
+        </div>
+    </section>
 
 </body>
 </html>
